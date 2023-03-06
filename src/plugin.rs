@@ -65,7 +65,7 @@ type Result<T> = std::result::Result<T, Error>;
 fn app_path<R: Runtime>(app: &AppHandle<R>) -> PathBuf {
     #[allow(deprecated)] // FIXME: Change to non-deprecated function in Tauri v2
     app.path_resolver()
-        .app_dir()
+        .resource_dir()
         .expect("No App path was found!")
 }
 
